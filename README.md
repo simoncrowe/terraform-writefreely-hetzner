@@ -1,2 +1,6 @@
-# terraform-writefreely-hetzner
-Deploy writefreely to Hertzner cloud using Docker containers
+# terraform-writefreely-hertzner
+
+Deploy a writefreely container on a Hertzner cloud server
+using Terraform/OpenTofu.
+
+## Usage
