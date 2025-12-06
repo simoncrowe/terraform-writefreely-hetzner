@@ -1,5 +1,5 @@
 variable "server_type" {
-  description = "Hertzner server type on which to deploy Writefreely"
+  description = "Hetzner server type on which to deploy Writefreely"
   type        = string
   default     = "cx23"
 }
@@ -11,7 +11,7 @@ variable "server_image" {
 }
 
 variable "server_location" {
-  description = "The Hertzner cloud location in which to provision the server. See https://docs.hetzner.com/cloud/general/locations/#what-locations-are-there"
+  description = "The Hetzner cloud location in which to provision the server. See https://docs.hetzner.com/cloud/general/locations/#what-locations-are-there"
   type        = string
   default     = "fsn1"
 }
@@ -23,7 +23,7 @@ variable "server_backups" {
 }
 
 variable "server_deletion_protection" {
-  description = "Prevent server from being deleted or rebuilt in the Hertzner cloud console. NB: deletion via Terraform/OpenTofu is still possible."
+  description = "Prevent server from being deleted or rebuilt in the Hetzner cloud console. NB: deletion via Terraform/OpenTofu is still possible."
   type        = bool
   default     = false
 }
@@ -39,4 +39,21 @@ variable "public_addresses" {
     condition     = var.public_addresses.ipv6 || var.public_addresses.ipv4
     error_message = "At least one of ipv4 and ipv6 must be enabled so your server is reachable via the internet"
   }
+}
+
+variable "writefreely_hostname" {
+  description = "The hostname of the Writefreelyblog. e.g. example.com"
+  type = string
+}
+
+variable "writefreely_admin_username" {
+  description = "The username of the admin user of the Writefreely instance"
+  type = string
+  default = "admin"
+}
+
+variable "writefreely_admin_password" {
+  description = "The password of the admin user of the Writefreely instance"
+  type = string
+  sensitive = true
 }

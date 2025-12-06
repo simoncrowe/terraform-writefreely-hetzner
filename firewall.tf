@@ -14,7 +14,7 @@ resource "hcloud_firewall" "web_ingress" {
   rule {
     direction = "in"
     protocol  = "tcp"
-    port      = "433"
+    port      = "443"
     source_ips = [
       "0.0.0.0/0",
       "::/0"
