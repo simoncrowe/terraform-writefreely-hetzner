@@ -39,6 +39,7 @@ write_files:
           volumes:
             - ./Caddyfile:/etc/caddy/Caddyfile
             - caddy_ssl_data:/data
+          restart: unless-stopped
       volumes:
         wf_data:
         caddy_ssl_data:
