@@ -1,7 +1,11 @@
 # terraform-writefreely-hetzner
 
-Deploy a writefreely container on a Hetzner cloud server
-using Terraform/OpenTofu.
+Deploy a writefreely container on a Hetzner cloud server using
+Terraform/OpenTofu.
+
+It uses cloud-init user data to put in place docker-compose config
+based my other repo
+[writefreely-docker-compose-caddy](https://github.com/simoncrowe/writefreely-docker-compose-caddy)
 
 ## Usage
 
