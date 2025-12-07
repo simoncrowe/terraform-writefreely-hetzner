@@ -5,6 +5,33 @@ using Terraform/OpenTofu.
 
 ## Usage
 
+Here's a minimal example of what you'd need to use this module
+with [OpenTofu](https://opentofu.org/) (excluding variable blocks).
+
+```hcl
+terraform {
+  required_providers {
+    hcloud = {
+      source = "opentofu/hcloud"
+      version = ">= 1.53.1"
+    }
+  }
+}
+
+provider "hcloud" {
+  token = "${var.hcloud_token}"
+}
+
+module "writefreely" {
+  source = "git::https://github.com/simoncrowe/terraform-writefreely-hetzner.git"
+
+  server_location = "hel1"
+
+  writefreely_hostname       = "my.blog"
+  writefreely_admin_username = var.writefreely_admin_username
+  writefreely_admin_password = var.writefreely_admin_password
+}
+```
 
 ## Requirements
 
